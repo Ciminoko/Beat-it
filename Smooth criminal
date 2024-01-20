@@ -1,0 +1,59 @@
+
+package kz.aitu.dz;
+
+public class Human {
+    private String name;
+    private int age;
+
+    private Human(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        System.out.println("Getter for name was called");
+        return name;
+    }
+
+    private void setName(String name) {
+        System.out.println("Setter for name was called");
+        this.name = name;
+    }
+
+    public int getAge() {
+        System.out.println("Getter for age was called");
+        return age;
+    }
+
+    private void setAge(int age) {
+        System.out.println("Setter for age was called");
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Person: " + name + " Age: " + age + " Years";
+    }
+
+    public boolean compareIgnoreCase(String anotherString) {
+        System.out.println("Getter for name was called");
+        return name.equalsIgnoreCase(anotherString);
+    }
+
+    public static void main(String[] args) {
+        Human personObject = createHuman("William", 17);
+        System.out.println(personObject.toString());
+
+        String comparisonString = "William";
+        boolean isEqual = personObject.compareIgnoreCase(comparisonString);
+
+        if (isEqual) {
+            System.out.println("Name of the Person is equal to the comparison string (case-insensitive).");
+        } else {
+            System.out.println("Name of the Person is not equal to the comparison string (case-insensitive).");
+        }
+    }
+
+    public static Human createHuman(String name, int age) {
+        return new Human(name, age);
+    }
