@@ -1,4 +1,3 @@
-
 package kz.aitu.dz;
 
 public class Human {
@@ -36,7 +35,7 @@ public class Human {
     }
 
     public boolean compareIgnoreCase(String anotherString) {
-        System.out.println("Getter for name was called");
+        System.out.println("Comparison for name was called");
         return name.equalsIgnoreCase(anotherString);
     }
 
@@ -57,3 +56,4 @@ public class Human {
     public static Human createHuman(String name, int age) {
         return new Human(name, age);
     }
+}
